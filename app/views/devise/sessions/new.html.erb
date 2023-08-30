@@ -1,0 +1,44 @@
+<div class="flex items-center h-[calc(100vh-10rem)] w-full">
+  <div
+    class="
+      w-full
+      bg-white
+      rounded
+      shadow-lg
+      py-10
+      px-16
+      m-4
+      md:max-w-sm
+      md:mx-auto
+      bg-[#F3F4F6]
+    "
+  >
+    <span class="block w-full text-xl uppercase font-bold mb-4">Login</span>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "mb-4") do |f| %>
+      <div class="mb-4 md:w-full">
+        <%= f.label :email, class: "block text-xs mb-1" %>
+        <%= f.email_field :email,
+                      autofocus: true,
+                      autocomplete: "email",
+                      class:
+                        "w-full border rounded p-2 outline-none focus:shadow-outline",
+                      placeholder: "Username or Email" %>
+      </div>
+      <div class="mb-6 md:w-full">
+        <%= f.label :password, class: "block text-xs mb-1" %>
+        <%= f.password_field :password,
+                         autofocus: true,
+                         autocomplete: "password",
+                         class:
+                           "w-full border rounded p-2 outline-none focus:shadow-outline",
+                         placeholder: "Password" %>
+      </div>
+
+      <%= f.submit "Login",
+               class:
+                 "bg-green-500 hover:bg-green-700 text-white uppercase text-sm font-semibold px-4 py-2 rounded" %>
+    <% end %>
+
+  </div>
+</div>
+<%= render "devise/shared/links" %>

@@ -21,7 +21,6 @@ group :development, :test do
 end
 
 group :development, :test do
-  gem "debug", platforms: [:mri, :mingw, :x64_mingw]
   gem "factory_bot_rails"
   gem "faker"
   gem "pry-rails"
@@ -38,3 +37,7 @@ end
 
 
 # added my me
+
+gem "erb-formatter"
+
+gem "devise", "~> 4.9"
